@@ -1,0 +1,179 @@
+/* Custom Properties and Reset */
+:root {
+  --primary-color: #3f51b5; /* Indigo */
+  --accent-color: #ff4081; /* Pink */
+  --text-color: #333;
+  --bg-color: #f8f9fa;
+  --padding-size: 80px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+/* Header/Hero Section */
+.hero {
+  background: var(--primary-color);
+  color: white;
+  padding: var(--padding-size) 20px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e91e63; /* Darker Pink */
+}
+
+/* Commitment Section (Personalized Element) */
+.commitment-section {
+  text-align: center;
+  /* FIX: Consistent padding applied here */
+  padding: var(--padding-size) 20px;
+  background: white;
+}
+
+.counter-box {
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  max-width: 300px;
+}
+
+.counter-value {
+  display: block;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.counter-label {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #666;
+}
+
+.commitment-section p.note {
+  font-style: italic;
+  color: #777;
+  margin-top: 15px;
+}
+
+/* Projects Section */
+.projects-section {
+  padding: 40px 20px var(--padding-size);
+  text-align: center;
+}
+
+.projects-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 40px;
+}
+
+.project-grid {
+  display: grid;
+  /* Allows the grid items to flow nicely and wrap */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.project-item {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.2s;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+}
+
+.project-item h3 {
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* --- RESPONSIVENESS (Media Queries) --- */
+
+/* Tablet and Smaller Desktop Screens */
+@media (max-width: 768px) {
+  :root {
+    --padding-size: 40px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile Screens (IMPROVED: Ensures projects stack cleanly) */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .project-grid {
+    /* Forces one column on very small screens for better readability */
+    grid-template-columns: 1fr;
+  }
+
+  .counter-value {
+    font-size: 3rem;
+  }
+}
